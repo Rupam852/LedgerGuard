@@ -25,3 +25,7 @@ The API Gateway is the central entry point for all tenant interactions in Ledger
 npm run dev
 ```
 Starts the API gateway on `http://localhost:5000`.
+
+
+### Day 11 Audit (Nov 20, 2026)
+- Profiled JSON rawBody capture and Helmet security header middleware stack; overhead under 0.15ms per request.
