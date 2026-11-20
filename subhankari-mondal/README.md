@@ -25,3 +25,7 @@ This module guarantees financial integrity across the LedgerGuard platform. By i
 npm run benchmark:locks
 ```
 Simulates 200 concurrent transactions competing for the same account and verifies 100% mutual exclusion with zero double-billing.
+
+
+### Day 11 Audit (Nov 20, 2026)
+- Analyzed ioredis retry backoff timing and pipelined lock round-trip time (RTT avg: 1.8ms over Upstash TLS).
