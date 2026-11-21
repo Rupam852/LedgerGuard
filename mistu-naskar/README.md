@@ -28,3 +28,6 @@ Demonstrates sub-5ms context switching across multiple concurrent tenant databas
 
 ### Day 11 Audit (Nov 20, 2026)
 - Verified dynamic connection pool 30-minute idle eviction threshold and 5-minute background sweep interval.
+
+### Day 12 Audit (Nov 21, 2026)
+- Verified compound unique index on UsageQuota schema (tenantId, billingPeriod) preventing race duplicates.
