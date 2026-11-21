@@ -29,3 +29,6 @@ Simulates 200 concurrent transactions competing for the same account and verifie
 
 ### Day 11 Audit (Nov 20, 2026)
 - Analyzed ioredis retry backoff timing and pipelined lock round-trip time (RTT avg: 1.8ms over Upstash TLS).
+
+### Day 12 Audit (Nov 21, 2026)
+- Documented Redlock TTL sizing trade-offs vs MongoDB transaction execution window (5000ms TTL vs 2000ms max tx).
