@@ -29,3 +29,6 @@ Starts the API gateway on `http://localhost:5000`.
 
 ### Day 11 Audit (Nov 20, 2026)
 - Profiled JSON rawBody capture and Helmet security header middleware stack; overhead under 0.15ms per request.
+
+### Day 12 Audit (Nov 21, 2026)
+- Hardened 2000-calls/month quota boundary checks in billing route; verified 429 quota exceeded response.
