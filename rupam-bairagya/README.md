@@ -30,3 +30,6 @@ Starts the Vite development server on `http://localhost:5173`.
 
 ### Day 11 Audit (Nov 20, 2026)
 - Profiled and memoized TenantSwitcher dropdown and ledger filter renders (re-render latency under 1.2ms).
+
+### Day 12 Audit (Nov 21, 2026)
+- Verified CSV audit export formatting with RFC-4180 escaping and GST SAC 998313 tax split columns.
