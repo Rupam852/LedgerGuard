@@ -35,3 +35,6 @@ Simulates 200 concurrent transactions competing for the same account and verifie
 
 ### Day 13 Audit (Nov 22, 2026)
 - Verified rollback simulator abort sequence; confirmed zero phantom records in MongoDB after injected network fault.
+
+### Day 14 Audit (Nov 23, 2026)
+- Evaluated lock contention rejection ratio under simultaneous retries; verified fail-safe HTTP 423 Locked behavior.
