@@ -33,3 +33,6 @@ Starts the Vite development server on `http://localhost:5173`.
 
 ### Day 12 Audit (Nov 21, 2026)
 - Verified CSV audit export formatting with RFC-4180 escaping and GST SAC 998313 tax split columns.
+
+### Day 13 Audit (Nov 22, 2026)
+- Calibrated enterprise slate dark-mode contrast ratios to WCAG 2.1 AA (4.5 to 1 minimum) across card badges.
