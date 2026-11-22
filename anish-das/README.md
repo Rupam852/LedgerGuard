@@ -32,3 +32,6 @@ Starts the API gateway on `http://localhost:5000`.
 
 ### Day 12 Audit (Nov 21, 2026)
 - Hardened 2000-calls/month quota boundary checks in billing route; verified 429 quota exceeded response.
+
+### Day 13 Audit (Nov 22, 2026)
+- Tightened express.json schema validation with strict RFC-7807 problem details error responses.
