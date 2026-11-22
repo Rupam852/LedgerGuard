@@ -32,3 +32,6 @@ Simulates 200 concurrent transactions competing for the same account and verifie
 
 ### Day 12 Audit (Nov 21, 2026)
 - Documented Redlock TTL sizing trade-offs vs MongoDB transaction execution window (5000ms TTL vs 2000ms max tx).
+
+### Day 13 Audit (Nov 22, 2026)
+- Verified rollback simulator abort sequence; confirmed zero phantom records in MongoDB after injected network fault.
