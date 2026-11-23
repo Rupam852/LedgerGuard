@@ -35,3 +35,6 @@ Starts the API gateway on `http://localhost:5000`.
 
 ### Day 13 Audit (Nov 22, 2026)
 - Tightened express.json schema validation with strict RFC-7807 problem details error responses.
+
+### Day 14 Audit (Nov 23, 2026)
+- Audited CORS exposedHeaders (X-Request-ID, X-Tenant-ID, X-Crypto-Verified) and 15-minute onboarding token TTL.
