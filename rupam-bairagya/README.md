@@ -36,3 +36,6 @@ Starts the Vite development server on `http://localhost:5173`.
 
 ### Day 13 Audit (Nov 22, 2026)
 - Calibrated enterprise slate dark-mode contrast ratios to WCAG 2.1 AA (4.5 to 1 minimum) across card badges.
+
+### Day 14 Audit (Nov 23, 2026)
+- Hardened active view tab synchronization with window.history.pushState and popstate event listeners.
