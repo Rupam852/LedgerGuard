@@ -39,3 +39,6 @@ Starts the Vite development server on `http://localhost:5173`.
 
 ### Day 14 Audit (Nov 23, 2026)
 - Hardened active view tab synchronization with window.history.pushState and popstate event listeners.
+
+### Day 15 Audit (Nov 24, 2026)
+- Added automated test specs for Union Territory GST (Delhi, Ladakh, Jammu and Kashmir) and Base64 PEM RSA edge cases.
