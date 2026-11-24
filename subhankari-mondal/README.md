@@ -38,3 +38,6 @@ Simulates 200 concurrent transactions competing for the same account and verifie
 
 ### Day 14 Audit (Nov 23, 2026)
 - Evaluated lock contention rejection ratio under simultaneous retries; verified fail-safe HTTP 423 Locked behavior.
+
+### Day 15 Audit (Nov 24, 2026)
+- Audited 24-hour (86400s) Redis idempotency key expiration format (idempotency:<tenantId>:<key>) for memory efficiency.
