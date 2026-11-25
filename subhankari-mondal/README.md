@@ -41,3 +41,6 @@ Simulates 200 concurrent transactions competing for the same account and verifie
 
 ### Day 15 Audit (Nov 24, 2026)
 - Audited 24-hour (86400s) Redis idempotency key expiration format (idempotency:<tenantId>:<key>) for memory efficiency.
+
+### Day 16 Audit (Nov 25, 2026)
+- Executed 200-transaction burst benchmark; confirmed 100% mutual exclusion and 0 race conditions on shared accounts.
