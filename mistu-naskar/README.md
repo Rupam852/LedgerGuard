@@ -40,3 +40,6 @@ Demonstrates sub-5ms context switching across multiple concurrent tenant databas
 
 ### Day 15 Audit (Nov 24, 2026)
 - Ran automated cross-tenant data leakage audit with 50 rapid alternating queries; 100% tenant isolation confirmed.
+
+### Day 16 Audit (Nov 25, 2026)
+- Benchmarked Mongoose maxPoolSize=15 and minPoolSize=2 under burst load; zero connection starvation observed.
