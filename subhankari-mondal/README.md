@@ -44,3 +44,6 @@ Simulates 200 concurrent transactions competing for the same account and verifie
 
 ### Day 16 Audit (Nov 25, 2026)
 - Executed 200-transaction burst benchmark; confirmed 100% mutual exclusion and 0 race conditions on shared accounts.
+
+### Day 17 Audit (Nov 26, 2026)
+- Documented double-checked locking sequence diagram and Lua script fencing token ownership verification flow.
