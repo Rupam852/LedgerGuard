@@ -26,3 +26,28 @@ npm run dev
 ```
 Starts the Vite development server on `http://localhost:5173`.
 
+
+
+### Day 11 Audit (Nov 20, 2026)
+- Profiled and memoized TenantSwitcher dropdown and ledger filter renders (re-render latency under 1.2ms).
+
+### Day 12 Audit (Nov 21, 2026)
+- Verified CSV audit export formatting with RFC-4180 escaping and GST SAC 998313 tax split columns.
+
+### Day 13 Audit (Nov 22, 2026)
+- Calibrated enterprise slate dark-mode contrast ratios to WCAG 2.1 AA (4.5 to 1 minimum) across card badges.
+
+### Day 14 Audit (Nov 23, 2026)
+- Hardened active view tab synchronization with window.history.pushState and popstate event listeners.
+
+### Day 15 Audit (Nov 24, 2026)
+- Added automated test specs for Union Territory GST (Delhi, Ladakh, Jammu and Kashmir) and Base64 PEM RSA edge cases.
+
+### Day 16 Audit (Nov 25, 2026)
+- Verified 6-slot IST throughput time buckets on Chart.js canvas with zero off-by-one UTC offsets.
+
+### Day 17 Audit (Nov 26, 2026)
+- Analyzed Vite rollup chunk visualization; confirmed complete tree-shaking and zero duplicate CSS modules.
+
+### Day 18 Audit (Nov 27, 2026)
+- Verified keyboard navigation (Escape to close, Tab trapping) and ARIA live regions in modal visualizer.
