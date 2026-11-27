@@ -1,11 +1,17 @@
 import axios from "axios";
 import { RsaCryptoHelper } from "../crypto/rsaHelper.js";
 
-// Support both custom production API URL (e.g. Render/Vercel) and local fallback
+// Support both custom production API URL (e.g. Render/Cloudflare/Vercel) and local fallback
 const defaultHost = typeof window !== "undefined" ? window.location.hostname : "localhost";
-export const API_BASE_URL = import.meta.env.VITE_API_URL
-  ? String(import.meta.env.VITE_API_URL).replace(/\/$/, "")
-  : `http://${defaultHost}:5000/api/v1`;
+let resolvedApiUrl = (import.meta.env.VITE_API_URL || "").trim().replace(/\/$/, "");
+if (resolvedApiUrl) {
+  if (!resolvedApiUrl.endsWith("/api/v1")) {
+    resolvedApiUrl = `${resolvedApiUrl}/api/v1`;
+  }
+} else {
+  resolvedApiUrl = `http://${defaultHost}:5000/api/v1`;
+}
+export const API_BASE_URL = resolvedApiUrl;
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
