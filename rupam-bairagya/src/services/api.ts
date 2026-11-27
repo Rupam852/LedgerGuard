@@ -1,9 +1,11 @@
 import axios from "axios";
 import { RsaCryptoHelper } from "../crypto/rsaHelper.js";
 
-// Dynamically use current hostname so both localhost and mobile LAN work seamlessly
-const hostname = typeof window !== "undefined" ? window.location.hostname : "localhost";
-export const API_BASE_URL = `http://${hostname}:5000/api/v1`;
+// Support both custom production API URL (e.g. Render/Vercel) and local fallback
+const defaultHost = typeof window !== "undefined" ? window.location.hostname : "localhost";
+export const API_BASE_URL = import.meta.env.VITE_API_URL
+  ? String(import.meta.env.VITE_API_URL).replace(/\/$/, "")
+  : `http://${defaultHost}:5000/api/v1`;
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
