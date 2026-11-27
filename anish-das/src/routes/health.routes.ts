@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { performance } from "perf_hooks";
-import { masterConnection, redis } from "../config/db.js";
+import { initMasterDb, redis } from "../config/db.js";
 import { getOptionalEnv, getSanitizedHost } from "../config/env.js";
 
 export const healthRouter = Router();
@@ -12,11 +12,14 @@ healthRouter.get("/", async (_req: Request, res: Response) => {
   let redisStatus = "CONNECTED";
 
   try {
-    if (masterConnection && masterConnection.readyState === 1 && masterConnection.db) {
+    const conn = await initMasterDb();
+    if (conn && conn.readyState === 1 && conn.db) {
       const start = performance.now();
-      await masterConnection.db.admin().ping();
+      await conn.db.admin().ping();
       mongoLatencyMs = Math.max(1, Math.round(performance.now() - start));
       mongoStatus = "CONNECTED";
+    } else {
+      mongoStatus = "CONNECTING";
     }
   } catch {
     mongoStatus = "DEGRADED";

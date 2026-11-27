@@ -52,6 +52,9 @@ app.use("/api/v1/analytics", jwtUserAuthMiddleware, analyticsRouter);
 app.use("/analytics", jwtUserAuthMiddleware, analyticsRouter);
 
 app.use("/health", healthRouter);
+app.use("/api/v1/health", healthRouter);
+app.use("/ping", healthRouter);
+app.use("/api/v1/ping", healthRouter);
 
 app.use((req, res) => {
   res.status(404).json({ error: "NOT_FOUND", path: req.path });
