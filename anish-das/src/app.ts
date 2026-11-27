@@ -38,11 +38,19 @@ const billingJwtGuard = (req: Request, res: Response, next: NextFunction) => {
   return jwtTenantAuthMiddleware(req, res, next);
 };
 
-// Route mounts with JWT Tenant Auth & Zero-Knowledge RSA Signature guards
+// Route mounts with JWT Tenant Auth & Zero-Knowledge RSA Signature guards (supports both /api/v1 and root prefixes)
 app.use("/api/v1/auth", authRouter);
+app.use("/auth", authRouter);
+
 app.use("/api/v1/tenants", jwtUserAuthMiddleware, tenantsRouter);
+app.use("/tenants", jwtUserAuthMiddleware, tenantsRouter);
+
 app.use("/api/v1/billing", billingJwtGuard, cryptoVerifierMiddleware, billingRouter);
+app.use("/billing", billingJwtGuard, cryptoVerifierMiddleware, billingRouter);
+
 app.use("/api/v1/analytics", jwtUserAuthMiddleware, analyticsRouter);
+app.use("/analytics", jwtUserAuthMiddleware, analyticsRouter);
+
 app.use("/health", healthRouter);
 
 app.use((req, res) => {
