@@ -48,3 +48,6 @@ Starts the Vite development server on `http://localhost:5173`.
 
 ### Day 17 Audit (Nov 26, 2026)
 - Analyzed Vite rollup chunk visualization; confirmed complete tree-shaking and zero duplicate CSS modules.
+
+### Day 18 Audit (Nov 27, 2026)
+- Verified keyboard navigation (Escape to close, Tab trapping) and ARIA live regions in modal visualizer.
