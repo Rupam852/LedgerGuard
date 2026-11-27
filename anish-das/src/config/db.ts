@@ -70,6 +70,11 @@ export const TenantInvoiceSchema = new Schema<ITenantInvoice>(
 // Immutable Multi-Document ACID Audit Trail Schema for Isolated Tenant DBs
 export const TenantAuditLogSchema = new Schema<ITenantAuditLog>(
   {
+    auditId: {
+      type: String,
+      default: () => `audit_${Date.now()}_${Math.random().toString(36).substring(7)}`,
+      index: true,
+    },
     eventType: {
       type: String,
       enum: ["INVOICE_COMMITTED", "TRANSACTION_STAGED", "TRANSACTION_ABORTED", "INVOICE_DELETED"],
@@ -154,6 +159,9 @@ export async function getTenantDb(tenantId: string): Promise<Connection> {
     InvoiceModel.createCollection().catch(() => undefined),
     AuditLogModel.createCollection().catch(() => undefined),
   ]);
+
+  // Clean up any stale legacy unique indexes on auditId that conflict with multi-tenant isolation
+  await conn.collection("auditlogs").dropIndex("auditId_1").catch(() => undefined);
 
   tenantConnections.set(normalized, conn);
 

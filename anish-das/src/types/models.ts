@@ -54,6 +54,7 @@ export interface ITenantInvoice {
 }
 
 export interface ITenantAuditLog {
+  auditId?: string;
   eventType: AuditEventType;
   transactionId: string;
   invoiceNumber?: string | null;
